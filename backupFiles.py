@@ -3,7 +3,9 @@ import platform
 import os
 
 """
-I use two different operating systems, Linux and macOS, basically the dotfiles are the same, but there may be differences in each one, so it is necessary to check which system the script is running on
+I use two different operating systems, Linux and MacOS, 
+basically the dotfiles are the same, but there may be differences in each one, 
+so it is necessary to check which system the script is running on
 """
 
 if (platform.system() == 'Linux'):

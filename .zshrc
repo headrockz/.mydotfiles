@@ -10,6 +10,10 @@ export ZSH="/home/headrockz/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="spaceship"
 
+# spaceship config
+SPACESHIP_CHAR_SYMBOL="❯"
+SPACESHIP_CHAR_SUFFIX=" "
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -76,7 +80,6 @@ plugins=(git docker python zsh-syntax-highlighting zsh-autosuggestions ssh-agent
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="$(pyenv root)/shims:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 # export python=python3.9
@@ -103,13 +106,16 @@ export PATH="$(pyenv root)/shims:$PATH"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$(pyenv root)/shims:$PATH"
 
 if command -v pyenv 1>/dev/null 2>&1; then
  eval "$(pyenv init -)"
 fi
 
+# alias
 alias py="python"
 alias d="docker"
 alias gs="git status"
