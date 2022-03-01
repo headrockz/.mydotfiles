@@ -11,8 +11,50 @@ export ZSH="/home/headrockz/.oh-my-zsh"
 ZSH_THEME="spaceship"
 
 # spaceship config
-SPACESHIP_CHAR_SYMBOL="❯"
+SPACESHIP_PROMPT_ORDER=(
+  # user          # Username section
+  host          # Hostname section
+  dir           # Current directory section
+  git           # Git section (git_branch + git_status)
+  package       # Package version
+  gradle        # Gradle section
+  maven         # Maven section
+  node          # Node.js section
+  ruby          # Ruby section
+  elixir        # Elixir section
+  xcode         # Xcode section
+  swift         # Swift section
+  golang        # Go section
+  php           # PHP section
+  rust          # Rust section
+  haskell       # Haskell Stack section
+  julia         # Julia section
+  docker        # Docker section
+  aws           # Amazon Web Services section
+  gcloud        # Google Cloud Platform section
+  venv          # virtualenv section
+  conda         # conda virtualenv section
+  pyenv         # Pyenv section
+  dotnet        # .NET section
+  ember         # Ember.js section
+  kubectl       # Kubectl context section
+  terraform     # Terraform workspace section
+  exec_time     # Execution time
+  # battery       # Battery level and status
+  line_sep      # Line break
+  vi_mode       # Vi-mode indicator
+  # jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+
+SPACESHIP_HOST_SHOW="true"
+SPACESHIP_CHAR_SYMBOL="λ"
+# SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
+# SPACESHIP_BATTERY_SHOW="always"
+# SPACESHIP_BATTERY_THRESHOLD="99"
+SPACESHIP_EXIT_CODE_SHOW="true"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -75,7 +117,7 @@ SPACESHIP_CHAR_SUFFIX=" "
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker python zsh-syntax-highlighting zsh-autosuggestions ssh-agent)
+plugins=(git docker python zsh-syntax-highlighting zsh-autosuggestions web-search ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,6 +153,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$(pyenv root)/shims:$PATH"
 
+# echo 'eval "$(pyenv virtualenv-init -)"'
+
 if command -v pyenv 1>/dev/null 2>&1; then
  eval "$(pyenv init -)"
 fi
@@ -121,3 +165,7 @@ alias d="docker"
 alias gs="git status"
 alias gadd="git add ."
 alias gc="git commit -am"
+alias gp="git push"
+alias gpull="git pull"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
