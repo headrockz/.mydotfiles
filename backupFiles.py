@@ -12,6 +12,7 @@ if (platform.system() == 'Linux'):
 
     # copy my dotfiles to repository folder
     os.system('cat ~/.zshrc > .zshrc')
+    os.system('cat ~/.p10k.zsh > .p10k.zsh')
 
     #commit the changes
     os.system('echo "Commit dotfiles"')
@@ -22,6 +23,7 @@ if (platform.system() == 'Linux'):
 else:
     # copy my dotfiles to repository folder
     os.system('cat ~/.zshrc > ./macos/.zshrc')
+    os.system('cat ~/.p10k.zsh > ./macos/.p10k.zsh')
 
 
 

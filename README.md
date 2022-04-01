@@ -1,15 +1,11 @@
 # Asafe's dotfiles
 
-This repository holds my dotfiles and contains a python script to backup them and commit
+This repository holds my dotfiles, zsh install script and contains a python script to backup them and commit
 
-I use [oh-my-zsh](https://ohmyz.sh/) and the plugins:
+I use [powerlevel10k](https://github.com/romkatv/powerlevel10k/) and the plugins:
 
-- git
-- docker
-- python
-- zsh-syntax-highlighting
-- zsh-autosuggestions
-- ssh-agent
-- web-search
+- [fast-syntax-highlighting](https://github.com/zdharma-continuum/fast-syntax-highlighting)
+- [zsh-completions](https://github.com/zsh-users/zsh-completions)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
-***if you want to check out a post that explains better how I configure my shell [click here](https://www.linkedin.com/pulse/como-deixar-seu-terminal-mais-produtivo-asafe-felipe/?trackingId=J65clkOORAe%2FlLAtOav5eA%3D%3D)***
+
