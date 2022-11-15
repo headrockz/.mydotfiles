@@ -34,3 +34,5 @@ else:
     os.system(f'git commit -am "update {date} MacOS"')
     os.system('git push')
     os.system('echo "Have a nice day!"')
+
+os.system('echo "[$(date "+%Y-%m-%d")] backup realizado!" > ./.log')
