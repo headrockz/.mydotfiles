@@ -13,6 +13,7 @@ if (platform.system() == 'Linux'):
     # copy my dotfiles to repository folder
     os.system('cat ~/.zshrc > .zshrc')
     os.system('cat ~/.p10k.zsh > .p10k.zsh')
+    os.system('cp -r ~/.zfunc ./')
 
     #commit the changes
     os.system('git add .')

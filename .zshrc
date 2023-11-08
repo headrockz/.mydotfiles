@@ -5,6 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+HISTSIZE=5000
+SAVEHIST=5000
+HISTFILE=~/.zsh_history
+
 source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
@@ -13,6 +17,11 @@ source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Poetry
+export PATH="/$HOME/.local/bin:$PATH"
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
