@@ -14,6 +14,8 @@ source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# poetry
+export PATH="/Users/asafefelipe/.local/bin:$PATH"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -41,5 +43,9 @@ alias gc="git commit -am"
 alias gp="git push"
 alias gpull="git pull"
 alias update="brew update && brew upgrade"
-alias backup="rsync -rv --exclude=venv projects projects-old"
-alias server="ssh charizard@192.168.15.2 -p 954"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/usr/local/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/usr/local/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/bin/google-cloud-sdk/completion.zsh.inc'; fi
